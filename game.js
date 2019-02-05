@@ -13,6 +13,7 @@ const textDisplay = window.document.getElementById("gameDisplay");
 const actionButton = window.document.getElementById("actionButton");
 actionButton.onclick = performCommand;
 const actionText = window.document.getElementById("actionText");
+actionText.onkeypress = catchKeypress;
 // actionText.onKeyPress  = catchKeypress;
 //used for computer generated speech
 const synthesis = window.speechSynthesis;
