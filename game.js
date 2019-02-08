@@ -19,7 +19,7 @@ const actionButton = window.document.getElementById("actionButton");
 actionButton.onclick = performCommand;
 const actionText = window.document.getElementById("actionText");
 actionText.onkeypress = catchKeypress;
-
+const commandDisplay = window.document.getElementById("commandDisplay");
 //used for computer generated speech
 const synthesis = window.speechSynthesis;
 
@@ -76,7 +76,7 @@ function printVoices(){
 
 
 function setMessage(newMessage = "What would you like to do?"){
-  command.innerHTML = `<h3>${newMessage}</h3>`;
+  commandDisplay.innerHTML = `<h3>${newMessage}</h3>`;
 }
 
 
@@ -172,7 +172,7 @@ function forest(command = ""){
 }
 
 
-function abandonedVillage(){
+function abandonedVillage(command = ""){
   currentLocation = abandonedVillage;
   //check for commands
   switch(command){
@@ -189,16 +189,17 @@ function abandonedVillage(){
 }
 
 
-function volcano(){
+function volcano(command = ""){
 // alert("volcano"+command);
 
   currentLocation = volcano;
   switch (command) {
     case NONE:
-      // setMessage("Be careful dude! This place is dangerous.");
+      setMessage("Be careful dude! This place is dangerous.");
       write("Oh dang! You are at the top of a scary volcano.");
       break;
     case SOUTH:
+      setMessage();
       beach();
       break;
     default:
@@ -208,12 +209,11 @@ function volcano(){
 }
 
 
-function gameOver(){
+function gameOver(command = ""){
   currentLocation = gameOver;
 }
 
 
 printVoices();
-// speak("It is working");
 //start the actual game
 startGame();
