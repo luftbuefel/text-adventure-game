@@ -206,9 +206,9 @@ function town(command = ""){
       write("You arrive at a small town there is a lovely fountain with a statue of a chicken in the town square. To the west there is a large impressive building. To the south there is a shopping area. In the east you see a long road going towards the mountains. There is a river in the distance to the north.");
       break;
     case "look chicken":
-    case "look at chicken statue"
+      case "look at chicken statue":
     case "look at statue":
-        write  ("You look into the tender eyes of the chicken statue. It feels like they are staring into the depths of your soul. They also appear to be looking to the west.")
+        write("You look into the tender eyes of the chicken statue. It feels like they are staring into the depths of your soul. They also appear to be looking to the west.")
     default:
       checkCommand(command);
       break;
@@ -238,7 +238,7 @@ function bank(command = ""){
     case NONE:
 //      setMessage("Be careful dude! This place is dangerous.");
       write("You are at a bank; impressive marble columns rise above holding up the massive vaulted ceiling. The exit is to the east.");
-      if(inventory.contains("rubber chicken")){
+      if(inventory.includes("rubber chicken")){
         write("A bank official approached you and says, \"What a magnificent rubber chicken! I must have it. Will you accept this diamondAfter years of waiting you finally saved enough money to get a ticket to Hawaii. Unfortunately you got on the wrong plane and now you are in a mysterious land. for it?\"");
         setMessage("Will you accept the offer?");
       }
@@ -269,13 +269,13 @@ function shop(command = ""){
     switch (command) {
         case "":
           write("You enter a shop and see many beautiful wares. There are no other customers around.");
-            if(inventory.contains("sword")){
+            if(inventory.includes("sword")){
                 write("You notice a beautiful sword on display. You stare at it in silence for a while and the shop keeper comes over. \"Like the sword do ya? That's pure titanium with mother of pearl inlay on the handle. It's so sharp you could cut the hair off a peach with it. Got anything of value? I do consider trades.")  
             }
           break;
         case "give chicken":
         case "give rubber chicken":
-             if(inventory.contains("rubber chicken" in inventory)){
+             if(inventory.includes("rubber chicken" in inventory)){
                 write("While that is nice I am afraid I am going to have to pass; I have a latex allergy.")
              }else{
                 write("What are you talking about?")
@@ -311,11 +311,12 @@ function cave(command = ""){
         case "go in":
         case "go in cave":
             write("You reluctantly enter the cave. It has a musky smell and you hear the faint sound of breathing. Out of no where a large horned monster jumps out at you.");
-            if(inventory.contains("sword")){
+            if(inventory.includes("sword")){
                 write("You think this might be the end and then suddenly you remember you have a sword. You get your deadly sword and offer it as a present to the monster. \"What a beautiful sword! you are a very kind person indeed! I would love to be your friend! You become good friends and together you win the game through the power of friendship. :D");
             }else{
                write("The monster looks at you with surprise. \"What are you doing in my house!\" The frightened monster hits you with a broom. You begin to run but slip on the damp cave floor. You start to slide and before you know it you shoot off of the side of a cliff. Luckily there are lots of pillows below. Unluckily, that is because there is another monster sleeping at the bottom of the cliff. Your timing is bad and instead of landing on the pillows, you land right in the monster's mouth. Having someone suddenly fall into its mouth wakes the monster. It coughs and accidentally swallows you whole. Looks like it wasn't your luck day. Game over :("); 
             }
+            break;
             //game ends
         default:
           checkCommand(command);
